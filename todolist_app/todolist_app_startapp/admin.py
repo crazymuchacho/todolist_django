@@ -15,4 +15,4 @@ class TaskAdmin(admin.ModelAdmin):
         "task_completed",
     )
 
-    search_fields = ("task", "task_create") # по каким полям будет производиться поиск
+    search_fields = ("task", "task_create")  # по каким полям будет производиться поиск

@@ -27,10 +27,10 @@ class table_Task(models.Model):
         if self.task_is_Done is False:
             self.task_completed = None
         else:
-            time_now=datetime.datetime.utcnow()
-            self.task_completed=time_now
+            time_now = datetime.datetime.utcnow()
+            self.task_completed = time_now
         return super().save(*args, **kwargs)
-    
+
     def __str__(self):
         """переопределение строкового представления объекта."""
         return f"Task {self.id}|{self.task}|{self.task_is_Done}|{self.task_create}|{self.task_completed}"

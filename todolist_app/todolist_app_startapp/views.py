@@ -6,8 +6,9 @@ from django.views.generic import (
     CreateView,
     UpdateView,
     View,
-    DeleteView
+    DeleteView,
 )
+
 
 # Create your views here.
 class TaskListView(ListView):
@@ -21,31 +22,34 @@ class TaskListView(ListView):
     # model = Cart
     template_name = "task_list.html"
 
+
 class TaskCreateView(CreateView):
     """Представление для создания одной корзины.
-    
+
     .._ https://docs.djangoproject.com/en/4.1/ref/class-based-views/generic-editing/#django.views.generic.edit.CreateView
     """
+
     model = table_Task
-    fields = ['task', 'task_is_Done']
+    fields = ["task", "task_is_Done"]
     template_name = "task_create.html"
-    success_url = '/tasks/'
+    success_url = "/tasks/"
+
 
 class TaskDeleteView(DeleteView):
     context_object_name = "task_del"
-    model=table_Task
-    fields = ['task', 'task_is_Done']
+    model = table_Task
+    fields = ["task", "task_is_Done"]
     template_name = "task_delete.html"
-    success_url = '/tasks/'
+    success_url = "/tasks/"
 
 
 class TaskUpdateView(UpdateView):
     """Представление для создания одной корзины.
-    
+
     .._ https://docs.djangoproject.com/en/4.1/ref/class-based-views/generic-editing/#django.views.generic.edit.CreateView
     """
-    model = table_Task
-    fields = ['task', 'task_is_Done']
-    template_name = "task_edit.html"
-    success_url = '/tasks/'
 
+    model = table_Task
+    fields = ["task", "task_is_Done"]
+    template_name = "task_edit.html"
+    success_url = "/tasks/"
